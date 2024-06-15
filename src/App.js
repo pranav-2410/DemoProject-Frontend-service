@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./App.css";
-import AboutUs from "./Component/AboutUs";
+// import AboutUs from "./Component/AboutUs";
 import NavBar from "./Component/NavBar";
 import TextForm from "./Component/TextForm";
 import Alert from "./Component/Alert";
 import React from 'react'
-import {
-  Route,
-  Routes,
-} from "react-router-dom";
+// import {
+//   Route,
+//   Routes,
+// } from "react-router-dom";
 
 function App() {
 
@@ -56,10 +56,11 @@ function App() {
       <Alert alert={alert}/>
     
       <div className="container my-3">
-        <Routes>
+      <TextForm mode={mode} showAlert={showAlert}/>
+        {/* <Routes>
           <Route path='/' element={<TextForm mode={mode} showAlert={showAlert}/>}/>
           <Route path='/about' element={<AboutUs mode={mode} showAlert={showAlert}/>} />
-        </Routes>
+        </Routes> */}
       </div>
     </>
   );
