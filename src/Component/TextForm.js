@@ -24,7 +24,7 @@ export default function TextForm(props) {
         setText(event.target.value)
     }
     const wordCount=(text)=>{
-      let words = text.split(" ");
+      let words = text.split(/\s+/);
       if(words.includes("")){
         return words.length -1;
       }
@@ -41,10 +41,10 @@ export default function TextForm(props) {
     <div className="container my-3" style={{color: props.mode==="dark"?"black":"white"}}>
         <h2>Enter your Text below</h2>
     <textarea className="form-control" style={{backgroundColor: props.mode==="dark"?"#e9ecef":"white",color: "black"}} value={text} onChange={OnChange} id="exampleFormControlTextarea1"   rows="8"></textarea>
-    <button className="btn btn-primary my-3 mx-2" onClick={converToUpper}>Convert to Upper Case</button>
-    <button className="btn btn-primary my-3 mx-2" onClick={convertToLower}>Convert to Lower Case</button>
-    <button className="btn btn-primary my-3 mx-2" onClick={convertToSpeech}>Convert to Speech</button>
-    <button className="btn btn-primary my-3 mx-2" onClick={clearText}>Clear</button>
+    <button disabled={text.length===0} className="btn btn-primary my-3 mx-2" onClick={converToUpper}>Convert to Upper Case</button>
+    <button disabled={text.length===0} className="btn btn-primary my-3 mx-2" onClick={convertToLower}>Convert to Lower Case</button>
+    <button disabled={text.length===0} className="btn btn-primary my-3 mx-2" onClick={convertToSpeech}>Convert to Speech</button>
+    <button disabled={text.length===0} className="btn btn-primary my-3 mx-2" onClick={clearText}>Clear</button>
     </div>
 
     <div className="container my-5" style={{color: props.mode==="dark"?"black":"white"}}>
